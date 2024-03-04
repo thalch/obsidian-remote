@@ -36,6 +36,9 @@ ENV CUSTOM_PORT="8080" \
 # Add local files
 COPY root/ /
 
+# Remove sudo
+RUN rm /usr/bin/sudo
+
 # Expose ports and volumes
 EXPOSE 8080 27123 27124
 VOLUME ["/config","/vaults"]
